@@ -1,14 +1,31 @@
 import React from "react";
 
-function Navbar({ switchPage }) {
+function Navbar({ switchPage, isLoggedIn, setIsLoggedIn }) {
   return (
-    <div className="navbar">
-      <h1>MyApp</h1>
-      <div>
-        <button onClick={() => switchPage("login")}>Login</button>
-        <button onClick={() => switchPage("register")}>Register</button>
-      </div>
-    </div>
+    <nav className="navbar">
+      <div className="logo">TradeShift</div>
+      <ul>
+        {isLoggedIn ? (
+          <>
+            <li onClick={() => switchPage("dashboard")}>Dashboard</li>
+            <li onClick={() => switchPage("portfolio")}>Portfolio</li>
+            <li
+              onClick={() => {
+                setIsLoggedIn(false);
+                switchPage("login");
+              }}
+            >
+              Logout
+            </li>
+          </>
+        ) : (
+          <>
+            <li onClick={() => switchPage("login")}>Login</li>
+            <li onClick={() => switchPage("register")}>Register</li>
+          </>
+        )}
+      </ul>
+    </nav>
   );
 }
 
