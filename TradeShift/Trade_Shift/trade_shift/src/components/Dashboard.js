@@ -30,7 +30,7 @@ function Dashboard({onMenuClick}) {
           <li onClick={() => onMenuClick("orders")}>Orders</li>
           <li>Watchlist</li>
          
-          <li>Analytics</li>
+          <li onClick={() => onMenuClick("analytics")}>Analytics</li>
           <li>Settings</li>
         </ul>
       </div>
