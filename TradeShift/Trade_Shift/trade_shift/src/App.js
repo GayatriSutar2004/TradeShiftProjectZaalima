@@ -1,42 +1,37 @@
 import React, { useState } from "react";
-import Navbar from "./Navbar";                   // Navbar src/ এ
-import Dashboard from "./components/Dashboard";  // Dashboard components/ এ
-import Portfolio from "./components/Portfolio";  // নতুন portfolio component
-import Login from "./Login";                     // Login src/ এ
-import Register from "./Register";               // Register src/ এ
+import Navbar from "./Navbar";
+import Dashboard from "./components/Dashboard";
+import Orders from "./components/Orders";
+import Login from "./Login";
+import Analytics from "./components/Analytics";
+import Register from "./Register";
 import "./App.css";
 
 function App() {
-  const [page, setPage] = useState("login"); // "login" বা "register" বা "portfolio"
+  const [page, setPage] = useState("login");
   const [isLoggedIn, setIsLoggedIn] = useState(false);
+
+  const handleMenuClick = (menu) => {
+    setPage(menu);
+  };
 
   return (
     <div>
       <Navbar switchPage={setPage} />
       
-      {isLoggedIn ? (
-        <>
-          {page === "dashboard" ? (
-            <Dashboard />
-          ) : page === "portfolio" ? (
-            <Portfolio />
-          ) : (
-            <Dashboard /> 
-          )}
-        </>
-      ) : (
-        page === "login" ? (
-          <Login
-            onLoginSuccess={() => {
-              setIsLoggedIn(true);
-              setPage("dashboard");
-            }}
-            onSwitchToRegister={() => setPage("register")}
-          />
-        ) : (
-          <Register onSwitchToLogin={() => setPage("login")} />
-        )
-      )}
+{isLoggedIn ? (
+  page === "orders" ? (
+    <Orders onMenuClick={handleMenuClick} />
+  ) : page === "analytics" ? (
+    <Analytics onMenuClick={handleMenuClick} />
+  ) : (
+    <Dashboard onMenuClick={handleMenuClick} />
+  )
+) : page === "login" ? (
+  <Login onLoginSuccess={() => setIsLoggedIn(true)} />
+) : (
+  <Register onRegisterSuccess={() => setPage("login")} />
+)}
     </div>
   );
 }
