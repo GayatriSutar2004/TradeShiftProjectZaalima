@@ -1,7 +1,20 @@
 import React, { useState } from "react";
+import {
+  LineChart,
+  Line,
+  XAxis,
+  YAxis,
+  CartesianGrid,
+  Tooltip,
+  Legend,
+  ResponsiveContainer,
+} from "recharts";
 import "../App.css";
 
 function Dashboard({onMenuClick}) {
+
+  const [search,setSearch]=useState("");
+
   const [portfolio] = useState([
     { symbol: "AAPL", name: "Apple Inc.", quantity: 10, price: 175.5 },
     { symbol: "TSLA", name: "Tesla Inc.", quantity: 5, price: 265.3 },
@@ -21,6 +34,10 @@ function Dashboard({onMenuClick}) {
     { symbol: "MSFT", name: "Microsoft Corp.", price: 330.50, change: +2.10 },
   ]);
 
+  const filterstock=marketData.find(stock=>
+    stock.symbol.toLowerCase()===search.toLowerCase()
+  );
+
   return (
     <div className="dashboard">
       <div className="sidebar">
@@ -28,17 +45,16 @@ function Dashboard({onMenuClick}) {
         <ul className="menu">
          <li onClick={() => onMenuClick("dashboard")}>Portfolio</li>
           <li onClick={() => onMenuClick("orders")}>Orders</li>
-          <li>Watchlist</li>
-         
+       
           <li onClick={() => onMenuClick("analytics")}>Analytics</li>
-          <li>Settings</li>
+          <li onClick={()=> onMenuClick("settings")}>Settings</li>
+          
         </ul>
       </div>
 
       <div className="main">
         <div className="header">
           <h2>Welcome, Investor!</h2>
-          <button className="logout">Logout</button>
         </div>
 
         <div className="cards">
@@ -57,9 +73,28 @@ function Dashboard({onMenuClick}) {
         </div>
 
         <div className="chart-section">
-          <h3>Portfolio Performance</h3>
-          <div className="chart-placeholder">[ Chart Placeholder ]</div>
-        </div>
+          <h3>Current Market</h3>
+          <input type="text" placeholder="Search by symbol" value={search} onChange={(e)=>setSearch(e.target.value)} style={{ padding :"8px", marginBottom:"10px", width:"250px"}}
+          />
+
+          {filterstock?(
+            <ResponsiveContainer width="100%" height={300}>
+              <LineChart data={filterstock.history.map((price, i)=>({day :i+1,price}))}>
+                <CartesianGrid strokeDasharray="3 3" />
+                <XAxis datakey="day" />
+                <YAxis/>
+                <Tooltip />
+                <Legend />
+                <Line type="monotone" dataKey="price" stroke="#8884d8" activeDot={{ r: 8 }} />
+              </LineChart>
+             </ResponsiveContainer>
+          ):(
+              <div className="chart-placeholder">[ Chart Placeholder ]</div>
+           
+          
+          )}
+          </div>
+          
 
         <div className="portfolio-section">
           <h3>My Portfolio</h3>
