@@ -32,6 +32,7 @@ function Register() {
     <div className="container">
       <h2>Register</h2>
       <form onSubmit={handleRegister}>
+        
         <input
           type="text"
           placeholder="Enter First Name"
@@ -39,6 +40,7 @@ function Register() {
           onChange={(e) => setFirstName(e.target.value)}
           required
         />
+
         <input
           type="text"
           placeholder="Enter Last Name"
@@ -47,6 +49,7 @@ function Register() {
           required
           style={{ marginTop: "10px" }}
         />
+
         <input
           type="email"
           placeholder="Enter Email"
@@ -55,6 +58,7 @@ function Register() {
           required
           style={{ marginTop: "10px" }}
         />
+
         <input
           type="password"
           placeholder="Enter Password"
