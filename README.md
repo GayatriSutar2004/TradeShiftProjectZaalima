@@ -60,6 +60,18 @@ Copy code
 
 ---
 
+Output
+
+![Dashboard](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224556.png)
+![Portfolio](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224726.png)
+![Orders](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224738.png)
+![Analytics](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224747.png)
+![Market Data](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224828.png)
+![Trade Form](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224836.png)
+![Portfolio Table](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224843.png)
+
+
+
 ## 📌 Installation
 
 ### 🔹 Backend (Spring Boot)
