@@ -62,13 +62,29 @@ Copy code
 
 Output
 
-![Dashboard](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224556.png)
-![Portfolio](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224726.png)
-![Orders](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224738.png)
-![Analytics](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224747.png)
-![Market Data](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224828.png)
+## 📸 Application Workflow
+
+### 1️⃣ Register Page
+![Register](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224556.png)
+
+### 2️⃣ Login Page
+![Login](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224726.png)
+
+### 3️⃣ Dashboard Overview
+![Dashboard](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224738.png)
+
+### 4️⃣ Portfolio Section
+![Portfolio](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224747.png)
+
+### 5️⃣ Orders / Trade Form
 ![Trade Form](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224836.png)
-![Portfolio Table](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224843.png)
+
+### 6️⃣ Analytics Dashboard
+![Analytics](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224828.png)
+
+### 7️⃣ Market Data Table
+![Market Data](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224843.png)
+
 
 
 
