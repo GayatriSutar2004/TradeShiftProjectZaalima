@@ -63,6 +63,7 @@ Copy code
 Output
 
 ## 📸 Application Workflow
+## 📸 Application Workflow
 
 ### 1️⃣ Register Page
 ![Register](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224556.png)
@@ -76,14 +77,14 @@ Output
 ### 4️⃣ Portfolio Section
 ![Portfolio](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224747.png)
 
-### 5️⃣ Orders / Trade Form
+### 5️⃣ Market Data Section
+![Market Data](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224828.png)
+
+### 6️⃣ Trade / Orders Form
 ![Trade Form](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224836.png)
 
-### 6️⃣ Analytics Dashboard
-![Analytics](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224828.png)
-
-### 7️⃣ Market Data Table
-![Market Data](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224843.png)
+### 7️⃣ Portfolio Table / Transactions
+![Portfolio Table](https://raw.githubusercontent.com/GayatriSutar2004/TradeShiftProjectZaalima/main/doc/Screenshot%202025-09-27%20224843.png)
 
 
 
