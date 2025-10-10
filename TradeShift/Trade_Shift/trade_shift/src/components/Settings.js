@@ -1,10 +1,31 @@
-<<<<<<< HEAD
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "../App.css";
 
 function Settings({ user, logout, onMenuClick }) {
   const [name, setName] = useState(user.name);
   const [email, setEmail] = useState(user.email);
+  const [message, setMessage] = useState("");
+
+  // Update user profile
+  const handleSave = async () => {
+    try {
+      const res = await fetch(`http://localhost:8081/users/${user.id}`, {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ name, email }),
+      });
+      if (res.ok) {
+        setMessage("Profile updated successfully!");
+      } else {
+        setMessage("Failed to update profile.");
+      }
+      setTimeout(() => setMessage(""), 3000);
+    } catch (err) {
+      console.error(err);
+      setMessage("Error updating profile.");
+      setTimeout(() => setMessage(""), 3000);
+    }
+  };
 
   return (
     <div className="dashboard">
@@ -42,6 +63,11 @@ function Settings({ user, logout, onMenuClick }) {
                 onChange={(e) => setEmail(e.target.value)}
               />
             </label>
+
+            <button className="save-btn" onClick={handleSave}>
+              Save Changes
+            </button>
+            {message && <div className="message">{message}</div>}
           </div>
 
           <button className="logout-btn" onClick={logout}>
@@ -54,60 +80,3 @@ function Settings({ user, logout, onMenuClick }) {
 }
 
 export default Settings;
-=======
-import React, { useState } from "react";
-import "../App.css";
-
-function Settings({ user, logout, onMenuClick }) {
-  const [name, setName] = useState(user.name);
-  const [email, setEmail] = useState(user.email);
-
-  return (
-    <div className="dashboard">
-      {/* Sidebar */}
-      <div className="sidebar">
-        <div className="logo">TradeShift</div>
-        <ul className="menu">
-          <li onClick={() => onMenuClick("dashboard")}>Portfolio</li>
-          <li onClick={() => onMenuClick("orders")}>Orders</li>
-          <li onClick={() => onMenuClick("analytics")}>Analytics</li>
-          <li onClick={() => onMenuClick("settings")}>Settings</li>
-        </ul>
-      </div>
-
-      {/* Main content */}
-      <div className="settings-container">
-        <div className="settings-box">
-          <h2>User Profile</h2>
-
-          <div className="profile-card">
-            <label>
-              <strong>Name:</strong>
-              <input
-                type="text"
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-              />
-            </label>
-
-            <label>
-              <strong>Email:</strong>
-              <input
-                type="email"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </label>
-          </div>
-
-          <button className="logout-btn" onClick={logout}>
-            Logout
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-}
-
-export default Settings;
->>>>>>> origin/master
