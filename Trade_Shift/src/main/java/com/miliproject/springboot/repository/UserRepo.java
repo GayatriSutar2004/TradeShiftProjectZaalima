@@ -1,20 +1,10 @@
 package com.miliproject.springboot.repository;
 
 import org.springframework.data.jpa.repository.JpaRepository;
-<<<<<<< HEAD
-
+import org.springframework.stereotype.Repository;
 import com.miliproject.springboot.entity.User;
 
+@Repository
 public interface UserRepo extends JpaRepository<User, Integer> {
-
-	public User findByEmail(String emaill);
-
+    User findByEmail(String email);
 }
-=======
-import com.miliproject.springboot.entity.User;
-
-public interface UserRepo extends JpaRepository<User, Long> {
-    User findByEmail(String username);
-    // custom query methods here
-}
->>>>>>> origin/master
