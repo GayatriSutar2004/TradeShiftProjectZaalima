@@ -378,3 +378,120 @@ button:hover {
 .logout-btn:hover {
   background-color: #115293;
 }
+
+.dashboard {
+  display: flex;
+}
+
+.sidebar {
+  width: 220px;
+  background-color: #222;
+  color: #fff;
+  padding: 20px;
+  height: 100vh;
+}
+
+.sidebar .logo {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+  color: #00d1b2;
+}
+
+.sidebar ul {
+  list-style: none;
+  padding: 0;
+}
+
+.sidebar li {
+  cursor: pointer;
+  padding: 10px 0;
+  border-bottom: 1px solid #444;
+}
+
+.sidebar li:hover {
+  color: #00d1b2;
+}
+
+.main {
+  flex: 1;
+  padding: 20px;
+  background: #f9f9f9;
+}
+
+.market-section table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.market-section th, .market-section td {
+  border: 1px solid #ddd;
+  padding: 10px;
+}
+
+.stock-search {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.stock-search input {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.stock-search button {
+  background-color: #00d1b2;
+  color: white;
+  border: none;
+  border-radius: 6px;
+  padding: 8px 15px;
+  cursor: pointer;
+}
+
+.holdings-section,
+.transactions-section {
+  margin-top: 30px;
+}
+
+.portfolio-table th {
+  background-color: #f0f0f0;
+}
+/* Buttons inside Login/Register containers */
+.login-container button,
+.container button {
+  background-color: #00bfa5; /* teal button */
+  color: #fff;
+  font-weight: 600;
+  border-radius: 6px;
+  padding: 10px;
+  border: none;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-container button:hover,
+.container button:hover {
+  background-color: #009e8f; /* darker teal on hover */
+}
+/* Full-page stock background */
+body.login-page,
+body.register-page {
+  background: url('https://images.unsplash.com/photo-1616587895364-6b5b7b68e6b1?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&q=80&w=1920') no-repeat center center fixed;
+  background-size: cover;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* Container stays the same */
+.login-container,
+.container {
+  background-color: rgba(0, 0, 0, 0.7); /* dark overlay */
+  padding: 30px;
+  border-radius: 8px;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(0,0,0,0.5);
+}

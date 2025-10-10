@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 
-function Register() {
+function Register({ switchPage }) {
   const [firstName, setFirstName] = useState("");
   const [lastName, setLastName] = useState("");
   const [email, setEmail] = useState("");
@@ -26,13 +26,15 @@ function Register() {
     setLastName("");
     setEmail("");
     setPassword("");
+
+    // Navigate to login after registration
+    switchPage("login");
   };
 
   return (
     <div className="container">
       <h2>Register</h2>
       <form onSubmit={handleRegister}>
-        
         <input
           type="text"
           placeholder="Enter First Name"
@@ -67,8 +69,21 @@ function Register() {
           required
           style={{ marginTop: "10px" }}
         />
-        <button type="submit" style={{ marginTop: "20px" }}>Register</button>
+
+        <button type="submit" style={{ marginTop: "20px" }}>
+          Register
+        </button>
       </form>
+
+      <p style={{ marginTop: "15px" }}>
+        Already have an account?{" "}
+        <span
+          onClick={() => switchPage("login")}
+          style={{ color: "blue", cursor: "pointer" }}
+        >
+          Login here
+        </span>
+      </p>
     </div>
   );
 }

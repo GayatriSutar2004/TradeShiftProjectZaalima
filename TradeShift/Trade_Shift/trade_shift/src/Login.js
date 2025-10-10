@@ -1,57 +1,59 @@
 import React, { useState } from "react";
+import "./App.css";
 
-function Login({ onLoginSuccess, onSwitchToRegister }) {
+function Login({ onLoginSuccess, switchPage }) {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
   const handleLogin = (e) => {
     e.preventDefault();
-    const users = JSON.parse(localStorage.getItem("users")) || [];
 
-    const user = users.find(
-      (u) => u.email === email.trim() && u.password === password
-    );
-
-    if (user) {
-      alert(`Welcome ${user.firstName}! Login Successful 🎉`);
-      setEmail("");
-      setPassword("");
-      onLoginSuccess(); // dashboard দেখানোর জন্য
-    } else {
-      alert("Invalid email or password ❌");
+    if (!email || !password) {
+      alert("Fill email and password");
+      return;
     }
+
+    // Check localStorage for registered users
+    const users = JSON.parse(localStorage.getItem("users")) || [];
+    const user = users.find((u) => u.email === email && u.password === password);
+
+    if (!user) {
+      alert("Invalid email or password ❌");
+      return;
+    }
+
+    const loggedInUser = { name: `${user.firstName} ${user.lastName}`, email: user.email, role: "Trader" };
+    onLoginSuccess(loggedInUser);
   };
 
   return (
     <div className="container">
-      <h2>Login</h2>
+      <h2>Login to TradeShift</h2>
       <form onSubmit={handleLogin}>
         <input
           type="email"
-          placeholder="Enter Email"
+          placeholder="Email"
           value={email}
           onChange={(e) => setEmail(e.target.value)}
           required
         />
         <input
           type="password"
-          placeholder="Enter Password"
+          placeholder="Password"
           value={password}
           onChange={(e) => setPassword(e.target.value)}
           required
-          style={{ marginTop: "10px" }}
         />
-        <button type="submit" style={{ marginTop: "20px" }}>
-          Login
-        </button>
+        <button type="submit">Login</button>
       </form>
-      <p style={{ marginTop: "10px" }}>
+
+      <p style={{ marginTop: "15px" }}>
         Don’t have an account?{" "}
         <span
-          style={{ color: "blue", cursor: "pointer", textDecoration: "underline" }}
-          onClick={onSwitchToRegister}
+          onClick={() => switchPage("register")}
+          style={{ color: "blue", cursor: "pointer" }}
         >
-          Please register first
+          Register here
         </span>
       </p>
     </div>
