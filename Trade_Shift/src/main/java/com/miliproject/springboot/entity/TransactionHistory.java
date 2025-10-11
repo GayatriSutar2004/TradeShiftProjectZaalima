@@ -8,16 +8,17 @@ public class TransactionHistory {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    private int id;  // Unique ID for each transaction
 
-    private int userId;
-    private Date date;
-    private String type; // Buy or Sell
-    private String symbol;
-    private int quantity;
-    private double price;
+    private int userId;  // ID of the user who made the transaction
+    private Date date;   // Date of the transaction
+    private String type; // Transaction type: "Buy" or "Sell"
+    private String symbol; // Stock or asset symbol
+    private int quantity;  // Number of units bought or sold
+    private double price;  // Price per unit
 
-    // Getters and setters
+    // Getters and Setters
+
     public int getId() { return id; }
     public void setId(int id) { this.id = id; }
 
