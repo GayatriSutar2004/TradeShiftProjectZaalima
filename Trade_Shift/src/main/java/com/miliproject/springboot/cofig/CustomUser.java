@@ -58,4 +58,3 @@ package com.miliproject.springboot.cofig;
 		}
 
 	}
-
