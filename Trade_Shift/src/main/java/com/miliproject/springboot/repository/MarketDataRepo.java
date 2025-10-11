@@ -9,12 +9,12 @@ import java.util.List;
 @Repository
 public interface MarketDataRepo extends JpaRepository<MarketData, String> {
 
-    // Find stocks by name containing a keyword
+    // Find all MarketData entries where the name contains the given keyword (case-insensitive)
     List<MarketData> findByNameContainingIgnoreCase(String keyword);
 
-    // Find stocks with price greater than a value
+    // Find all MarketData entries where the current price is greater than the given value
     List<MarketData> findByCurrentPriceGreaterThan(double price);
 
-    // Find stocks with price less than a value
+    // Find all MarketData entries where the current price is less than the given value
     List<MarketData> findByCurrentPriceLessThan(double price);
 }
