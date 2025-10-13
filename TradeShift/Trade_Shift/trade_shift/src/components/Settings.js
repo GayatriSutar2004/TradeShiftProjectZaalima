@@ -14,7 +14,7 @@ function Settings({ user, logout, onMenuClick }) {
 
     try {
       // API Endpoints: পোর্ট 8080 ব্যবহার করা হয়েছে এবং JWT Header যোগ করা হয়েছে
-      const res = await fetch(`http://localhost:8080/users/${user.id}`, {
+      const res = await fetch(`http://localhost:8081/users/${user.id}`, {
         method: "PUT",
         headers: {
           "Content-Type": "application/json",
