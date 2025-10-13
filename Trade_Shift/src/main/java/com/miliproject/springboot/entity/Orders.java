@@ -1,63 +1,36 @@
 package com.miliproject.springboot.entity;
 
-import javax.persistence.*;
+import jakarta.persistence.*;  // ✅ use jakarta instead of javax
 import java.time.LocalDateTime;
 
-@Entity // Marks this class as a JPA entity (maps to a database table)
+@Entity
 public class Orders {
-
-    @Id // Marks this field as the primary key
-    @GeneratedValue(strategy = GenerationType.IDENTITY) 
-    // Auto-generates a unique ID for each order (auto-incremented by the database)
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String symbol; // The stock symbol (e.g., AAPL, GOOGL)
-    private String type;   // The type of order - "Buy" or "Sell"
-    private int quantity;  // Number of stock units ordered
-    private double price;  // Price per unit at the time of the order
-    private LocalDateTime date; // Timestamp when the order was placed
+    private String symbol;
+    private String type; // Buy or Sell
+    private int quantity;
+    private double price;
+    private LocalDateTime date;
 
-    // ✅ Getters and Setters — provide controlled access to private fields
+    // Getters and setters
+    public Long getId() { return id; }
+    public void setId(Long id) { this.id = id; }
 
-    public Long getId() { 
-        return id; 
-    }
-    public void setId(Long id) { 
-        this.id = id; 
-    }
+    public String getSymbol() { return symbol; }
+    public void setSymbol(String symbol) { this.symbol = symbol; }
 
-    public String getSymbol() { 
-        return symbol; 
-    }
-    public void setSymbol(String symbol) { 
-        this.symbol = symbol; 
-    }
+    public String getType() { return type; }
+    public void setType(String type) { this.type = type; }
 
-    public String getType() { 
-        return type; 
-    }
-    public void setType(String type) { 
-        this.type = type; 
-    }
+    public int getQuantity() { return quantity; }
+    public void setQuantity(int quantity) { this.quantity = quantity; }
 
-    public int getQuantity() { 
-        return quantity; 
-    }
-    public void setQuantity(int quantity) { 
-        this.quantity = quantity; 
-    }
+    public double getPrice() { return price; }
+    public void setPrice(double price) { this.price = price; }
 
-    public double getPrice() { 
-        return price; 
-    }
-    public void setPrice(double price) { 
-        this.price = price; 
-    }
-
-    public LocalDateTime getDate() { 
-        return date; 
-    }
-    public void setDate(LocalDateTime date) { 
-        this.date = date; 
-    }
+    public LocalDateTime getDate() { return date; }
+    public void setDate(LocalDateTime date) { this.date = date; }
 }
