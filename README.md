@@ -14,7 +14,7 @@ TradeShift is an enterprise-grade platform that enables investors to:
 
 - **Backend:** Spring Boot (Java)  
 - **Frontend:** React.js  
-- **Database:** PostgreSQL / MySQL  
+- **Database:**  MySQL  
 - **APIs:** Brokerage APIs (Plaid, etc.), Market Data APIs (Finnhub, IEX Cloud)  
 
 ---
@@ -247,8 +247,9 @@ npm test
 
 🤝 Contributors
 
->>>>>>> origin/master
-You – Project Owner
+>>>>>>> origin/main
+Soumili Samanta – Project Owner
+contributer Gayatri and Anant
 
 Future contributors welcome 🚀
 
